@@ -1,12 +1,14 @@
 import React from 'react';
 import './Grid.css'; // Import the CSS file for styling
 
-const Grid = () => {
+const Grid = ({captureKeyDown, guess}) => {
+
   return (
     <div className="grid-container">
       {[...Array(30)].map((_, index) => (
-        <div key={index} className="grid-box">
-        </div>
+        <input key={index} maxLength="1" className="grid-box" onKeyDown={captureKeyDown}>
+            {guess[i]}
+        </input>
       ))}
     </div>
   );
